@@ -1,0 +1,211 @@
+/*=============
+	General 
+===============*/
+
+/* variables for fonts & colors */
+:root {
+	--small-h1-font: 2.25rem;
+	--small-h3-font: 1.3125rem;
+	--small-body-font: 1rem;
+	--small-small: 0.625rem;
+
+	--large-h1-font: 3.5rem;
+	--large-h3-font: 1.75rem;
+	--large-body-font: 1.125rem;
+
+	--color-main: #404040;
+	--color-accent: #f18119;
+	--color-bg: #fff;
+}
+
+body {
+	box-sizing: border-box;
+	color: var(--color-main);
+	font-family: 'Source Sans Pro', sans-serif;
+	font-weight: 400;
+	font-size: var(--small-body-font);
+	margin: 0;
+	padding: 0;
+	text-align: center;
+}
+
+h1 {
+	color: var(--color-bg);
+	font-size: var(--small-h1-font);
+	font-weight: 300;
+	width: 80%;
+}
+
+h2 {
+	color: var(--color-main);
+	font-size: 1.5rem;
+	font-weight: 900;
+	margin-bottom: 0;
+}
+
+h3 {
+	color: var(--color-accent);
+	font-size: var(--small-h3-font);
+	font-weight: 900;
+	margin: 0;
+	text-transform: uppercase;
+}
+
+strong {
+	font-weight: 900;
+}
+
+#main p {
+	width: 80%;
+}
+
+/*===============
+	Typography 
+=================*/
+button { 
+	font-weight: 900;
+	text-transform: uppercase;
+}
+
+.special {
+	border-top: 5px solid;
+	border-image: 
+	linear-gradient(to left, #ff713b, #ffa51d) 1;
+	color: var(--color-accent);
+	font-size: 0.8rem;
+	order: -1;
+	letter-spacing: 1px;
+	margin: 0;
+	padding: 0.5em 0;
+	text-transform: uppercase;
+}
+
+.fine-print {
+	font-size: 0.8rem;
+	letter-spacing: 1px;
+}
+
+/*=============
+	Layout 
+===============*/
+input,
+button {
+	background-color: var(--color-main);
+	border: 0;
+	border-radius: 0.5em;
+	color: var(--color-bg);
+	font-family: inherit;
+	font-size: 1rem;
+	margin-bottom: 1em;
+	padding: 0.4em;
+	text-align: center;
+	transition: all 0.5s;
+	width: 60%;
+}
+
+input:focus {
+	box-shadow: 0 0 3pt 2pt var(--color-accent);
+	outline: 0;
+	transform: scale(1.1);
+}
+
+input::placeholder {
+	color: #f8f8f8;
+	text-transform: capitalize;
+}
+
+button {
+	background-image: 
+	linear-gradient(to left, #ff713b, #ffa51d);
+	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+button:hover,
+button:focus {
+	background-image: 
+	linear-gradient(to right, #ff713b, #ffa51d);
+	box-shadow: 0 0 3pt 2pt var(--color-main);
+	color: var(--color-main);
+	outline: 0;
+	transform: scale(1.1);
+}
+
+.header,
+#main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 100%;
+}
+
+.header {
+	background-blend-mode: overlay;
+	background-color: var(--color-main);
+	background-image: url(images/ribs.jpg);
+	background-position: center; 
+	background-size: cover;
+	height: 84vh;
+	justify-content: space-between;
+}
+
+#main {
+	justify-content: center;
+}
+
+.subtitle {
+	margin-bottom: 1em;
+}
+
+#bbq-form {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}
+
+/*
+Media query for desktop
+*/
+
+@media (min-width: 750px) {
+	body {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.header, 
+	#main {
+		height: 100vh;
+		padding: 0 1em;
+	}
+
+	.subtitle {
+		position: relative;
+		bottom: 6.5em;
+	}
+}
+
+@media (min-width: 900px) {
+	body {
+		font-size: var(--large-body-font);
+	}
+
+	h1 {
+		font-size: var(--large-h1-font);
+	}
+
+	h2 {
+		font-size: 2rem;
+	}
+
+	h3 {
+		font-size: var(--large-h3-font)
+	}
+
+	.subtitle {
+		position: relative;
+		bottom: 1.8em;
+	}
+}
